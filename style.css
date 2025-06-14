@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7ed63;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #ff5722;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+section {
+    padding: 2rem;
+}
+
+section#inicio {
+    background-color: #ffe082;
+}
+
+/* Footer */
+footer {
+    background-color: #ff6f00;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+#banner {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider {
+    width: 100%;
+    position: relative;
+    height: 300px;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    animation: slide 25s infinite;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Animación */
+@keyframes slide {
+    0%    { margin-left: 0%; }
+    20%   { margin-left: 0%; }
+    25%   { margin-left: -100%; }
+    45%   { margin-left: -100%; }
+    50%   { margin-left: -200%; }
+    70%   { margin-left: -200%; }
+    75%   { margin-left: -300%; }
+    95%   { margin-left: -300%; }
+    100%  { margin-left: -400%; }
+}
+
+#cinta-imagenes {
+    padding: 2rem;
+    background-color: #fff8e1;
+    color: #333;
+}
+
+#cinta-imagenes h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #ff6f00; /* color naranja-amarillo */
+}
+
+/* Cinta horizontal */
+.cinta {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+
+/* Imágenes de la cinta */
+.cinta img {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cinta img:hover {
+    transform: scale(1.05);
+}
+
+/* Barra de scroll personalizada para WebKit (Chrome, Safari) */
+.cinta::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cinta::-webkit-scrollbar-track {
+    background: #fff3e0; /* amarillo muy claro */
+    border-radius: 4px;
+}
+
+.cinta::-webkit-scrollbar-thumb {
+    background-color: #ffca28; /* amarillo vibrante */
+    border-radius: 4px;
+    border: 2px solid #fff3e0;
+}
+
+/* Barra de scroll para Firefox */
+.cinta {
+    scrollbar-width: thin;
+    scrollbar-color: #ffca28 #fff3e0;
+}
+
+.sobre-taqueria {
+    background-color: #fff3cd; /* Amarillo claro */
+    color: #4e342e; /* Marrón oscuro para contraste */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sobre-taqueria h2 {
+    color: #e65100; /* Naranja quemado */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.sobre-taqueria p {
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/*menu*/
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 1.5rem;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #e63946;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.price {
+  font-weight: bold;
+  color: #1d3557;
+  font-size: 1.2em;
+}
+
+
+/*mosaico*/
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.mosaic-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.mosaic-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mosaic-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 6px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.mosaic-item:hover .overlay {
+    transform: translateY(0);
+}
+
+
+
+/*eventos*/
+
+.eventos {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.eventos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cuadros-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.evento {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.evento:hover {
+  transform: scale(1.03);
+}
+
+.evento img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.evento h3 {
+  font-size: 1.3rem;
+  margin: 15px 0 10px;
+  color: #222;
+}
+
+.evento p {
+  padding: 0 15px 20px;
+  font-size: 0.95rem;
+  color: #555;
+}
